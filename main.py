@@ -6,7 +6,7 @@ import json
 single_modifyer_penalty = 0.5
 double_modifyer_penalty = 1.5
 
-with open(os.path.dirname(sys.argv[0]) + "/xmodsymboles.json", 'r', encoding='utf8', errors="ignore") as f:
+with open(os.path.join(os.path.dirname(sys.argv[0]), "xmodsymboles.json"), 'r', encoding='utf8', errors="ignore") as f:
     xmodsymboles = json.load(f)
 def get_mapping(mapping):
     file = os.path.join(os.path.dirname(sys.argv[0]), 'mappings', mapping)
@@ -26,7 +26,7 @@ def get_mapping(mapping):
     return keymapping
 
 
-with open(os.path.dirname(sys.argv[0]) + "/key_score.json", 'r', encoding='utf8', errors="ignore") as f:
+with open(os.path.join(os.path.dirname(sys.argv[0]), "key_score.json"), 'r', encoding='utf8', errors="ignore") as f:
     key_score = json.load(f)
 def generate_character_scor(keymapping):
     char_scores = {}
@@ -70,7 +70,7 @@ def freq(files):
     all_freq = {k: v/sum for k, v in sorted(all_freq.items(), key=lambda item: item[1], reverse=True)}
     return all_freq, sum
 
-with open(os.path.dirname(sys.argv[0]) + "/key_posstion.json", 'r', encoding='utf8', errors="ignore") as f:
+with open(os.path.join(os.path.dirname(sys.argv[0]), "key_posstion.json"), 'r', encoding='utf8', errors="ignore") as f:
     key_posstion = json.load(f)
 def print_mapping(mapping):
     print(mapping + ":")
